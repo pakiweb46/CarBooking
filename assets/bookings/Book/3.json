@@ -1,0 +1,13 @@
+{
+  "bookingId": 3,
+  "fName": "Test Name 1",
+  "lName":"Last Name 2",
+  "fromDateTime": "Sat Aug 11 2018 09:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)",
+  "toDateTime" : "Sun Aug 12 2018 09:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)",
+  "emailId": "teste@test.de",
+  "address" :   "testing to he end",
+  "contactNo":  "017663662",
+  "carId":  "1",
+  "carName":"intive_Kupferwerk 1",
+  "username": "guest"
+}

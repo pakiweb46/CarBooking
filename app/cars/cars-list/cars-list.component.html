@@ -1,0 +1,17 @@
+
+
+
+    <a
+
+      class="list-group-item clearfix"
+      *ngFor="let car of cars">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ car.name }}</h4>
+        <p class="list-group-item-text">{{ car.shortDescription }}</p>
+      </div>
+      <span class="pull-right">
+        <button class="btn-primary bg-primary" [routerLink]="['/Cars', car.id]"> Detailed View </button>
+      </span>
+    </a>
+
+

@@ -1,0 +1,7 @@
+@mixin body-font() {
+  font-family: initial; /*set to default*/
+}
+
+@mixin heading-font() {
+  font-weight: 700;
+}

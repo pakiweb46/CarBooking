@@ -1,0 +1,44 @@
+{
+  "index": "/index.html",
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html"
+      ],
+      "versionedFiles": [
+        "/*.bundle.css",
+        "/*.bundle.js",
+        "/*.chunk.js"
+      ],
+      "urls":[
+        "http://job-applicants-dummy-api.kupferwerk.net.s3.amazonaws.com/api/cars.json"
+      ]
+    }
+  }, {
+    "name": "assets",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/**"
+      ]
+    }
+  }],
+  "dataGroups":[
+    {
+      "name": "posts",
+      "urls":[
+        "http://job-applicants-dummy-api.kupferwerk.net.s3.amazonaws.com/api/cars.json"
+      ],
+      "cacheConfig":{
+        "maxSize": 3,
+        "maxAge":"12h",
+        "timeout":"5s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}

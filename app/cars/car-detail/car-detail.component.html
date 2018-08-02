@@ -1,0 +1,22 @@
+<div *ngIf="carDetailModel; else infoText;" #carDetail>
+  <a  class="list-group-item clearfix">
+     <span class="pull-right">
+        <img
+          src="http://job-applicants-dummy-api.kupferwerk.net.s3.amazonaws.com/api/{{carDetailModel.image}}"
+          alt="{{ carDetailModel.name }}"
+          class="img-responsive"
+          style="max-height: 150px;">
+      </span>
+    <div class="pull-left">
+      <h3 class="list-group-item-heading">{{ carDetailModel.name }}</h3>
+      <h4 class="list-group-item-heading">{{ carDetailModel.shortDescription }}</h4>
+      <p class="list-group-item-text">{{ carDetailModel.description }}</p>
+    </div>
+    <div class="pull-right">
+      <button class="btn-primary" [routerLink]="['/Book',carDetailModel.id]"> Book Now</button>
+    </div>
+  </a>
+</div>
+<ng-template #infoText>
+  <h1>Please Select a Car</h1>
+</ng-template>

@@ -1,0 +1,52 @@
+ng <?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="de" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="Title" datatype="html">
+        <source>Car Booking</source>
+        <target>Auto Buchung</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">App Title</note>
+      </trans-unit>
+      <trans-unit id="tText" datatype="html">
+        <source>Toggle navigation</source>
+        <target>Togglen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header/header.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Toggle Text</note>
+      </trans-unit>
+      <trans-unit id="fab868d80ed83e838bad6f0ac40bd5243fc2d62c" datatype="html">
+        <source>Car Booking</source>
+        <target>Auto Buchung</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header/header.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Car Booking Head@introHeader</note>
+      </trans-unit>
+      <trans-unit id="Link1" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Availble Cars<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Autos<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header/header.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Available Cars</note>
+      </trans-unit>
+      <trans-unit id="Link3" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>My Bookings<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Meine Buchungen<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header/header.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">My Bookings</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,160 @@
+<header class="masthead bg-primary text-white text-center">
+  <div class="container">
+
+    <h1 class="text-uppercase mb-0">Book a Car</h1>
+    <hr class="star-light">
+    <h2 class="font-weight-light mb-0">A Dummy Car Rental Application</h2>
+  </div>
+</header>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div *ngIf="carData && carToBook; else infoText;" class="col-sm-10 col-md-8 col-lg-6">
+        <h3> Good Choice</h3>
+        <div class="center-block">
+          <img
+            src="http://job-applicants-dummy-api.kupferwerk.net.s3.amazonaws.com/api/{{carData.image}}"
+            alt="{{ carData.name }}"
+            class="img-responsive"
+            style="max-height: 150px;">
+        </div>
+        <div class="center-block">
+          <h3 class="list-group-item-heading">{{ carData.name }}</h3>
+          <h4 class="list-group-item-heading">{{ carData.shortDescription }}</h4>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <ng-template #infoText>
+      <h1>Please Select a Car</h1>
+    </ng-template>
+
+    <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+      <div class="row">
+
+        <div class="col-md-4">
+          <label for="fName">First Name</label>
+          <input required name="fName"
+                  #refFname="ngModel"
+                  class="form-control" [(ngModel)]="bookingModel.fName" id="fName">
+          <div *ngIf="!refFname.valid  && (refFname.dirty || refFname.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!refFname.errors.required">
+              Required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="lName">Last Name</label>
+          <input required name="lName"
+                 #refLname="ngModel"
+                 class="form-control" [(ngModel)]="bookingModel.lName" id="lName">
+          <div *ngIf="!refLname.valid  && (refLname.dirty || refLname.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!refLname.errors.required">
+              Required
+            </div>
+          </div>
+        </div>
+      </div>
+          <input required name="carId"
+                 #refCarId="ngModel" [(ngModel)]="bookingModel.carId" id="carId" type="hidden">
+        <input required name="carName"
+               #refCarName="ngModel" [(ngModel)]="bookingModel.carName" id="carName" type="hidden">
+        <div class="row">
+        <div class="col-md-4">
+          <label for="startTime">Start Date & Time: </label> <br/>
+          <input [min]="minDate" [owlDateTime]="sT" [owlDateTimeTrigger]="sT"
+                 (dateTimeChange)="dateChanged()"
+                 [(ngModel)]="bookingModel.fromDateTime" id="startTime" name="startDateTime" #refStartTime >
+
+          <owl-date-time #sT [startAt]="startDateTime"  ></owl-date-time>
+
+          <div *ngIf="refStartTime.invalid"
+               class="alert alert-danger">
+            <div [hidden]="!refStartTime.errors.required">
+              Required
+            </div>
+          </div>
+          <div *ngIf="refStartTime.invalid && refStartTime.errors.owlDateTimeMin" class="alert alert-danger">
+            Date Time value must after {{minDate | date: 'medium'}}
+          </div>
+
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-4">
+          <label for="endTime">End Date & Time: </label> <br/>
+          <input [min]="minEndDate" [max]="maxDate"  [owlDateTime]="eT"
+                 [owlDateTimeTrigger]="eT" [(ngModel)]="bookingModel.toDateTime" id="endTime" name="endDateTime"
+                 #refEndTime="ngModel" >
+          <owl-date-time #eT [startAt]="endDateTime"></owl-date-time>
+          <div *ngIf="refEndTime.invalid"
+               class="alert alert-danger">
+            <div [hidden]="!refEndTime.errors.required">
+              Required
+            </div>
+            <div [hidden]="!refEndTime.errors.owlDateTimeMax">
+              Date Time value must before {{maxDate | date: 'medium'}}
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-4">
+          <label for="emailId">Email</label>
+          <input type="text" class="form-control" name="emailId" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                 [(ngModel)]="bookingModel.emailId" #refEmailId="ngModel" id="emailId" required>
+          <div *ngIf="!refEmailId.valid  && (refEmailId.dirty || refEmailId.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!refEmailId.errors.required">
+              Email is required and format should be <i>abc@zzz.com</i>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="col-md-4">
+          <label for="contactNo">Contact No</label>
+          <input type="text" class="form-control" name="contactNo" maxlength="10" pattern="^\d+$"
+                 [(ngModel)]="bookingModel.contactNo" #refContactNo="ngModel" id="contactNo" required>
+          <div *ngIf="!refContactNo.valid  && (refContactNo.dirty || refContactNo.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!refContactNo.errors.required">
+              Contact No is required
+            </div>
+          </div>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="address">Address</label>
+          <input type="text" style="width:350px;height:80px;" class="form-control" name="address"
+                 [(ngModel)]="bookingModel.address" #refAddress="ngModel" id="address" required>
+          <div *ngIf="!refAddress.valid  && (refAddress.dirty || refAddress.touched)"
+               class="alert alert-danger">
+            <div [hidden]="!refAddress.errors.required">
+              Address is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+          <div style="margin-top:10px;" class="col-md-4">
+            <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Send Booking</button>
+
+          </div>
+        </div>
+          <div class="row">
+          <div style="margin-top:10px;" class="col-md-4">
+          <button  [routerLink]="['/Cars']" class="btn btn-danger">Cacnel Booking</button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

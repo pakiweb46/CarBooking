@@ -1,0 +1,33 @@
+<header class="masthead bg-primary text-white text-center">
+  <div class="container">
+
+    <h1 class="text-uppercase mb-0">My Bookings</h1>
+    <hr class="star-light">
+    <h2 class="font-weight-light mb-0">A Dummy Car Rental Application</h2>
+  </div>
+</header>
+<div class="row" >
+
+<div class="col-xl-6 col-lg-6 col-md-6" *ngIf="bookingDetailModel" >
+     <span class="pull-right">
+        <img
+          src="http://job-applicants-dummy-api.kupferwerk.net.s3.amazonaws.com/api/{{carData.image}}"
+          alt="{{ bookingDetailModel.carName }}"
+          class="img-responsive"
+          style="max-height: 150px;">
+      </span>
+    <div class="pull-left">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading"> Car Name : {{ bookingDetailModel.carName }}</h4>
+        <p class="list-group-item-heading"> Booked from : {{ bookingDetailModel.fromDateTime }} </p>
+        <p class="list-group-item-heading"> Return Date : {{ bookingDetailModel.toDateTime }} </p>
+        <p class="list-group-item-text"> First Name:  {{ bookingDetailModel.fName }} </p>
+        <p class="list-group-item-text"> Last Name:  {{ bookingDetailModel.lName }} </p>
+        <p class="list-group-item-text"> Enail: {{ bookingDetailModel.emailId }} </p>
+        <p class="list-group-item-text"> Telefone: {{ bookingDetailModel.contactNo }} </p>
+        <p class="list-group-item-text"> Address: {{ bookingDetailModel.address }} </p>
+      </div>
+
+</div>
+</div>
+</div>

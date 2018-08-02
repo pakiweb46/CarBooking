@@ -1,0 +1,31 @@
+[
+  {
+    "id" : 3,
+    "name" : "The intive_Kupferwerk car",
+    "shortDescription" : "Transporter"
+  },
+  {
+    "id" : 1,
+    "name" : "intive_Kupferwerk 1",
+    "shortDescription" : "Limousine with 5 Seats"
+  },
+  {
+    "id" : 2,
+    "name" : "intive_Kupferwerk car 2",
+    "shortDescription" : "2 seated car"
+  },
+  {
+    "id" : 4,
+    "name" : "Kupferwerk vehicle",
+    "shortDescription" : "Limousine"
+  },
+  {
+    "id" : 5,
+    "name" : "Bicycle"
+  },
+  {
+    "id" : 6,
+    "name" : "Skateboard",
+    "shortDescription" : "With nice stickers on the skateboard to make it fancy"
+  }
+]
